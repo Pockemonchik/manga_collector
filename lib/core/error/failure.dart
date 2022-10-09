@@ -2,6 +2,6 @@ abstract class Failure {
 
 }
 
-class ServerFailure {
+class ServerFailure extends Failure {}
 
-}
+class CacheFailure extends Failure {}

@@ -5,14 +5,14 @@ import 'package:http/http.dart' as http;
 
 import '../../../core/error/exception.dart';
 
-abstract class MangaRemoteDatasource {
+abstract class MangaRemoteDataSource {
   Future<List<MangaModel>> getAllManga(int page);
 }
 
-class MangaRemoteDatasourceImpl implements MangaRemoteDatasource {
+class MangaRemoteDataSourceImpl implements MangaRemoteDataSource {
   final http.Client client;
 
-  MangaRemoteDatasourceImpl(this.client);
+  MangaRemoteDataSourceImpl(this.client);
 
   @override
   Future<List<MangaModel>> getAllManga(int page) => _getMangaFromUrl("https://api.mangadex.org/manga");

@@ -5,14 +5,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../core/error/exception.dart';
 
-abstract class MangaLocalDatasource{
+abstract class MangaLocalDataSource{
   Future<List<MangaModel>>getMangaFromCache();
   void mangaToCache(List<MangaModel> manga);
 }
 const CACHED_MANGA_LIST = 'CACHED_MANGA_LIST';
 
 // тут надо подобрать внутренне хранилище
-class MangaLocalDatasourceImpl implements MangaLocalDatasource{
+class MangaLocalDatasourceImpl implements MangaLocalDataSource{
   final SharedPreferences sharedPreferences;
 
   MangaLocalDatasourceImpl(this.sharedPreferences);
